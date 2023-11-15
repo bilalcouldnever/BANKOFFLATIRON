@@ -1,38 +1,115 @@
-.App {
+/* App.css */
+
+body {
+  font-family: 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 66 ,37)
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
   text-align: center;
+  color: #FFB000;
+  font-size: 350%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  color: #FFB000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+th, td {
+  border: 1px solid #ffb000;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #fbf8f8;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+label {
+  color: #ffb000;
+  margin-bottom: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+input {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: rgba(0, 66 ,37);
+  color: rgb(0, 0, 0);
+  font-size: 150%;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #ffb000;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  box-sizing: border-box
+  ;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  color: #000000;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border: 2px solid #ffcf9d;
+}
+
+input[type="text"]:focus::placeholder,
+input[type="number"]:focus::placeholder {
+  color: transparent;
+}
+
+input[type="text"],
+input[type="number"],
+button {
+  margin-right: 10px;
+}
+
+/* SearchBar Component */
+input[type="text"] {
+  width: 300px;
+  padding: 8px;
+}
+
+/* TransactionList Component */
+.container {
+  margin-top: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  input[type="text"] {
+    width: 100%;
   }
 }

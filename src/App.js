@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import TransactionList from './TransactionList';
+import TransactionForm from './TransactionForm';
+import SearchBar from './SearchBar';
+import './App.css'; 
 
 function App() {
+  const [transactions, setTransactions] = useState([]);
+  const [filteredTransactions, setFilteredTransactions] = useState([]);
+
+  function App() {
+   
+  }
+  
+
+  useEffect(() => {
+    
+    setTransactions([
+   
+    ]);
+
+   
+  }, []);
+
+  const addTransaction = (newTransaction) => {
+    
+    setTransactions([...transactions, newTransaction]);
+  };
+
+  const handleSearch = (searchTerm) => {
+   
+    const filtered = transactions.filter(transaction =>
+      transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredTransactions(filtered);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>~BANK OF FLATIRON~</h1>
+      <SearchBar handleSearch={handleSearch} />
+      <TransactionList transactions={filteredTransactions.length ? filteredTransactions : transactions} />
+      <TransactionForm addTransaction={addTransaction} />
     </div>
   );
 }
 
 export default App;
+
